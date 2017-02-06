@@ -8,7 +8,6 @@ RUN apt-get update && apt-get install -y \
   screen \
   openjdk-8-jre-headless \
   rsync \
-  git \
   curl \
   rlwrap \
   nano \
@@ -20,11 +19,10 @@ RUN curl https://deb.nodesource.com/node_4.x/pool/main/n/nodejs/nodejs_4.7.2-1no
  && rm node.deb
 
 #download mineos from github
-RUN mkdir /usr/games/minecraft \
-  && cd /usr/games/minecraft \
-  && git clone --depth=1 https://github.com/hexparrot/mineos-node.git . \
-  && cp mineos.conf /etc/mineos.conf \
-  && chmod +x webui.js mineos_console.js service.js
+RUN mkdir /usr/games/minecraft
+COPY root/ /usr/games/minecraft
+RUN cp root/mineos.conf /etc/mineos.conf
+RUN chmod +x webui.js mineos_console.js service.js
 
 #build npm deps and clean up apt for image minimalization
 RUN cd /usr/games/minecraft \
