@@ -1,2 +1,2 @@
 # docker-MineOS-Node
-An auto-updating docker for MineOS-Node with Java 8
+docker for MineOS-Node with Java 8 forked from hexparrot
