@@ -21,7 +21,7 @@ RUN curl https://deb.nodesource.com/node_4.x/pool/main/n/nodejs/nodejs_4.7.2-1no
 #download mineos from github
 RUN mkdir /usr/games/minecraft
 COPY root/ /usr/games/minecraft
-RUN cp root/mineos.conf /etc/mineos.conf
+RUN cp mineos.conf /etc/mineos.conf
 RUN chmod +x webui.js mineos_console.js service.js
 
 #build npm deps and clean up apt for image minimalization
