@@ -1,5 +1,6 @@
 FROM ubuntu:16.04
 MAINTAINER GroxyPod <GroxyPod@gmail.com>
+# Version v1.0.1
 
 #Install packages
 RUN apt-get update && apt-get install -y \
